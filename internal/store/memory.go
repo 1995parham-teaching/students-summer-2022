@@ -1,14 +1,19 @@
 package store
 
-import "github.com/1995parham-teaching/students/internal/model"
+import (
+	"github.com/1995parham-teaching/students/internal/model"
+	"go.uber.org/zap"
+)
 
 type StudentInMemory struct {
 	students map[uint64]model.Student
+	logger   *zap.Logger
 }
 
-func NewStudentInMemory() *StudentInMemory {
+func NewStudentInMemory(logger *zap.Logger) *StudentInMemory {
 	return &StudentInMemory{
 		students: make(map[uint64]model.Student),
+		logger:   logger,
 	}
 }
 
@@ -20,6 +25,8 @@ func (m *StudentInMemory) Save(s model.Student) error {
 	}
 
 	m.students[s.ID] = s
+
+	m.logger.Debug("current students", zap.Any("students", m.students))
 
 	return nil
 }
