@@ -12,3 +12,6 @@ ReSTful API to create, update, retrieve and delete students from a datastore. Re
 4. [![YouTube Video Views](https://img.shields.io/youtube/views/y4gKNZmRx_4?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/y4gKNZmRx_4)
 5. [![YouTube Video Views](https://img.shields.io/youtube/views/Y6WXneMYKrU?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/Y6WXneMYKrU)
 6. [![YouTube Video Views](https://img.shields.io/youtube/views/kXcIbVl2kNU?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/kXcIbVl2kNU)
+7. [![YouTube Video Views](https://img.shields.io/youtube/views/i9oxlZyeXeY?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/i9oxlZyeXeY)
+8. [![YouTube Video Views](https://img.shields.io/youtube/views/CqnaNd8ceoE?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/CqnaNd8ceoE)
+9. [![YouTube Video Views](https://img.shields.io/youtube/views/TIW3fL8WCCY?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/TIW3fL8WCCY)
