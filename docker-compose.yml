@@ -1,0 +1,9 @@
+---
+version: "3.9"
+
+services:
+  database:
+    image: mongo:5
+    ports:
+      - 27017:27017
+

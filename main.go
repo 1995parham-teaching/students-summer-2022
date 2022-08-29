@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 
+	"github.com/1995parham-teaching/students/internal/config"
 	"github.com/1995parham-teaching/students/internal/handler"
 	"github.com/1995parham-teaching/students/internal/store"
 	"github.com/labstack/echo/v4"
@@ -10,8 +11,17 @@ import (
 )
 
 func main() {
+	cfg := config.New()
+
 	app := echo.New()
-	logger, err := zap.NewDevelopment()
+
+	var logger *zap.Logger
+	var err error
+	if cfg.Debug {
+		logger, err = zap.NewDevelopment()
+	} else {
+		logger, err = zap.NewProduction()
+	}
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -36,6 +46,8 @@ func main() {
 
 		h.Register(app.Group("/api/students"))
 	}
+
+	app.Debug = cfg.Debug
 
 	if err := app.Start(":1234"); err != nil {
 		log.Println(err)
