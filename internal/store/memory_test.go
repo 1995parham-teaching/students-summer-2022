@@ -10,6 +10,8 @@ import (
 )
 
 func TestInMemorySave(t *testing.T) {
+	t.Parallel()
+
 	st := store.NewStudentInMemory(zap.NewNop())
 	ctx := context.Background()
 
@@ -17,6 +19,7 @@ func TestInMemorySave(t *testing.T) {
 		ID:        9231058,
 		FirstName: "Parham",
 		LastName:  "Alvani",
+		Average:   0,
 	}); err != nil {
 		t.Fatal(err)
 	}
