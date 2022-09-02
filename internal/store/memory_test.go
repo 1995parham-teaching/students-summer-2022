@@ -13,11 +13,13 @@ func TestInMemorySave(t *testing.T) {
 	st := store.NewStudentInMemory(zap.NewNop())
 	ctx := context.Background()
 
-	st.Save(ctx, model.Student{
+	if err := st.Save(ctx, model.Student{
 		ID:        9231058,
 		FirstName: "Parham",
 		LastName:  "Alvani",
-	})
+	}); err != nil {
+		t.Fatal(err)
+	}
 
 	m, err := st.Get(ctx, 9231058)
 	if err != nil {
