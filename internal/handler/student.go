@@ -12,6 +12,11 @@ import (
 	"go.uber.org/zap"
 )
 
+const (
+	IDBase = 10
+	IDBits = 64
+)
+
 type Student struct {
 	Store  store.Student
 	Logger *zap.Logger
@@ -31,7 +36,7 @@ func (s Student) GetAll(c echo.Context) error {
 func (s Student) Get(c echo.Context) error {
 	ctx := c.Request().Context()
 
-	id, err := strconv.ParseUint(c.Param("id"), 10, 64)
+	id, err := strconv.ParseUint(c.Param("id"), IDBase, IDBits)
 	if err != nil {
 		return echo.ErrBadRequest
 	}
@@ -73,7 +78,7 @@ func (s Student) Create(c echo.Context) error {
 		return echo.ErrBadRequest
 	}
 
-	id, _ := strconv.ParseUint(req.ID, 10, 64)
+	id, _ := strconv.ParseUint(req.ID, IDBase, IDBits)
 
 	m := model.Student{
 		FirstName: req.FirstName,
