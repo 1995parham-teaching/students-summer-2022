@@ -47,6 +47,7 @@ func main(logger *zap.Logger, cfg config.Config) {
 }
 
 func New(logger *zap.Logger, cfg config.Config) *cobra.Command {
+	// nolint: exhaustruct
 	return &cobra.Command{
 		Use:   "serve",
 		Short: "runs http server for students api",
