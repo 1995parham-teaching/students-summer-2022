@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"log"
 	"strings"
 
@@ -50,7 +49,7 @@ func New() Config {
 		log.Fatalf("error unmarshalling config: %s", err)
 	}
 
-	fmt.Printf("%+v", instance)
+	log.Printf("%+v", instance)
 
 	return instance
 }

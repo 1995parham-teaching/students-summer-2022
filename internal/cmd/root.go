@@ -19,13 +19,17 @@ const ExitFailure = 1
 func Execute() {
 	cfg := config.New()
 
-	var logger *zap.Logger
-	var err error
+	var (
+		logger *zap.Logger
+		err    error
+	)
+
 	if cfg.Debug {
 		logger, err = zap.NewDevelopment()
 	} else {
 		logger, err = zap.NewProduction()
 	}
+
 	if err != nil {
 		log.Fatal(err)
 	}
