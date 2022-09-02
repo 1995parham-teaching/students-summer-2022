@@ -1,6 +1,8 @@
 package store
 
 import (
+	"context"
+
 	"github.com/1995parham-teaching/students/internal/model"
 	"go.uber.org/zap"
 )
@@ -17,7 +19,7 @@ func NewStudentInMemory(logger *zap.Logger) *StudentInMemory {
 	}
 }
 
-func (m *StudentInMemory) Save(s model.Student) error {
+func (m *StudentInMemory) Save(_ context.Context, s model.Student) error {
 	if _, ok := m.students[s.ID]; ok {
 		return DuplicateStudentError{
 			ID: s.ID,
@@ -31,7 +33,7 @@ func (m *StudentInMemory) Save(s model.Student) error {
 	return nil
 }
 
-func (m *StudentInMemory) Get(id uint64) (model.Student, error) {
+func (m *StudentInMemory) Get(_ context.Context, id uint64) (model.Student, error) {
 	s, ok := m.students[id]
 	if ok {
 		return s, nil
@@ -42,7 +44,7 @@ func (m *StudentInMemory) Get(id uint64) (model.Student, error) {
 	}
 }
 
-func (m *StudentInMemory) GatAll() ([]model.Student, error) {
+func (m *StudentInMemory) GetAll(_ context.Context) ([]model.Student, error) {
 	ss := make([]model.Student, 0)
 
 	for _, s := range m.students {

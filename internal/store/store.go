@@ -1,6 +1,7 @@
 package store
 
 import (
+	"context"
 	"fmt"
 
 	"github.com/1995parham-teaching/students/internal/model"
@@ -23,7 +24,7 @@ func (err DuplicateStudentError) Error() string {
 }
 
 type Student interface {
-	Save(model.Student) error
-	Get(uint64) (model.Student, error)
-	GatAll() ([]model.Student, error)
+	Save(context.Context, model.Student) error
+	Get(context.Context, uint64) (model.Student, error)
+	GetAll(context.Context) ([]model.Student, error)
 }

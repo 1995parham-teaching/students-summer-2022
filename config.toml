@@ -1,1 +1,6 @@
 debug = true
+
+[database]
+url = "mongodb://127.0.0.1:27017"
+name = "example"
+connection_timeout = "5s"

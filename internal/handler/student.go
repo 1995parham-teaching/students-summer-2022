@@ -18,7 +18,9 @@ type Student struct {
 }
 
 func (s Student) GetAll(c echo.Context) error {
-	ss, err := s.Store.GatAll()
+	ctx := c.Request().Context()
+
+	ss, err := s.Store.GetAll(ctx)
 	if err != nil {
 		return echo.ErrInternalServerError
 	}
@@ -27,12 +29,14 @@ func (s Student) GetAll(c echo.Context) error {
 }
 
 func (s Student) Get(c echo.Context) error {
+	ctx := c.Request().Context()
+
 	id, err := strconv.ParseUint(c.Param("id"), 10, 64)
 	if err != nil {
 		return echo.ErrBadRequest
 	}
 
-	st, err := s.Store.Get(id)
+	st, err := s.Store.Get(ctx, id)
 	if err != nil {
 		var errNotFound store.StudentNotFoundError
 		if ok := errors.As(err, &errNotFound); ok {
@@ -48,6 +52,8 @@ func (s Student) Get(c echo.Context) error {
 }
 
 func (s Student) Create(c echo.Context) error {
+	ctx := c.Request().Context()
+
 	var req request.Student
 
 	if err := c.Bind(&req); err != nil {
@@ -76,7 +82,7 @@ func (s Student) Create(c echo.Context) error {
 		Average:   0,
 	}
 
-	if err := s.Store.Save(m); err != nil {
+	if err := s.Store.Save(ctx, m); err != nil {
 		var errDuplicate store.DuplicateStudentError
 		if ok := errors.As(err, &errDuplicate); ok {
 			s.Logger.Error("duplicate student",
