@@ -15,6 +15,7 @@ require (
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/inconshreveable/mousetrap v1.0.1 // indirect
 	github.com/klauspost/compress v1.15.9 // indirect

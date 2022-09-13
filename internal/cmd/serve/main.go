@@ -31,12 +31,22 @@ func main(logger *zap.Logger, cfg config.Config) {
 	{
 		logger := logger.Named("http")
 
-		h := handler.Student{
+		ha := handler.Auth{
+			Logger:   logger.Named("auth"),
+			Name:     cfg.Admin.Name,
+			Username: cfg.Admin.Username,
+			Password: cfg.Admin.Password,
+			Key:      []byte(cfg.Secret),
+		}
+
+		ha.Register(app.Group(""))
+
+		hs := handler.Student{
 			Store:  studentStore,
 			Logger: logger.Named("student"),
 		}
 
-		h.Register(app.Group("/api/students"))
+		hs.Register(app.Group("/api/students"))
 	}
 
 	app.Debug = cfg.Debug
