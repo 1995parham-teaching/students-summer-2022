@@ -1,7 +1,9 @@
 package handler
 
 import (
+	"errors"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/1995parham-teaching/students/internal/request"
@@ -10,12 +12,67 @@ import (
 	"go.uber.org/zap"
 )
 
+var ErrInvalidSigningMethod = errors.New("unexpected signing method")
+
+const TokenHeaderLen = 2
+
 type Auth struct {
 	Key      []byte
 	Username string
 	Name     string
 	Password string
 	Logger   *zap.Logger
+}
+
+func (a Auth) Auth(next echo.HandlerFunc) echo.HandlerFunc {
+	return func(c echo.Context) error {
+		tokenHeader := strings.Fields(c.Request().Header.Get("Authorization"))
+
+		if len(tokenHeader) != TokenHeaderLen {
+			a.Logger.Error("invalid authorization header structure", zap.Strings("authorization", tokenHeader))
+
+			return echo.ErrUnauthorized
+		}
+
+		tokenString := tokenHeader[1]
+
+		token, err := jwt.ParseWithClaims(tokenString, new(jwt.RegisteredClaims),
+			func(token *jwt.Token) (interface{}, error) {
+				if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+					return nil, ErrInvalidSigningMethod
+				}
+
+				return a.Key, nil
+			})
+		if err != nil {
+			a.Logger.Error("token parsing failed", zap.Error(err))
+
+			return echo.ErrUnauthorized
+		}
+
+		if !token.Valid {
+			a.Logger.Error("token validation failed")
+
+			return echo.ErrUnauthorized
+		}
+
+		claims, ok := token.Claims.(*jwt.RegisteredClaims)
+		if !ok {
+			a.Logger.Error("invalid token claims")
+
+			return echo.ErrUnauthorized
+		}
+
+		if err := claims.Valid(); err != nil {
+			a.Logger.Error("invalid claims", zap.Error(err))
+
+			return echo.ErrUnauthorized
+		}
+
+		c.Set("name", claims.Subject)
+
+		return next(c)
+	}
 }
 
 func (a Auth) Login(c echo.Context) error {

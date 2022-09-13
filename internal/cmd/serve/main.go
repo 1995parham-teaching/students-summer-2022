@@ -46,7 +46,7 @@ func main(logger *zap.Logger, cfg config.Config) {
 			Logger: logger.Named("student"),
 		}
 
-		hs.Register(app.Group("/api/students"))
+		hs.Register(app.Group("/api/students", ha.Auth))
 	}
 
 	app.Debug = cfg.Debug
