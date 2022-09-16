@@ -16,3 +16,7 @@ Requests needs validation, package needs tests, there is an ORM and etc.
 7. [![YouTube Video Views](https://img.shields.io/youtube/views/i9oxlZyeXeY?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/i9oxlZyeXeY)
 8. [![YouTube Video Views](https://img.shields.io/youtube/views/CqnaNd8ceoE?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/CqnaNd8ceoE)
 9. [![YouTube Video Views](https://img.shields.io/youtube/views/TIW3fL8WCCY?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/TIW3fL8WCCY)
+10 [![YouTube Video Views](https://img.shields.io/youtube/views/Bri_3efVYvk?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/Bri_3efVYvk)
+11 [![YouTube Video Views](https://img.shields.io/youtube/views/iTcDyasgZgI?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/iTcDyasgZgI)
+12 [![YouTube Video Views](https://img.shields.io/youtube/views/fYTOZOfu-is?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/fYTOZOfu-is)
+13 [![YouTube Video Views](https://img.shields.io/youtube/views/cIjWPnINLXI?logo=youtube&logoColor=red&style=flat-square)](https://youtu.be/cIjWPnINLXI)
