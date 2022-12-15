@@ -1,6 +1,8 @@
 # students.go
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summer-2022/ci.yaml?label=ci&logo=github&style=flat-square&branch=main)
+[![Codecov](https://img.shields.io/codecov/c/gh/1995parham-teaching/students-summer-2022?logo=codecov&style=flat-square)](https://codecov.io/gh/1995parham-teaching/students-summer-2022)
+
 
 ## Introduction
 
