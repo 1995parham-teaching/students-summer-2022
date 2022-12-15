@@ -1,9 +1,14 @@
-# Students.go
+# students.go
 
 ## Introduction
 
-ReSTful API to create, update, retrieve and delete students from a datastore (here our datasource is MongoDB).
-Requests needs validation, package needs tests, there is an ORM, etc.
+ReSTful API to create, update, retrieve and delete students from a data-store (here our data-store is MongoDB).
+In the real world, requests needs validation, package needs tests, there is an ORM, etc.
+Here we are doing our best to cover most of them.
+
+## About the Course
+
+The course was held at Summer 2022 with [Snapp!](https://snapp.ir) and [SBU University](https://sbu.ac.ir).
 
 ## Sessions
 
