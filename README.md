@@ -1,6 +1,6 @@
 # students.go
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summber-2022/ci.yaml?label=ci&logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summer-2022/ci.yaml?label=ci&logo=github&style=flat-square&branch=main)
 
 ## Introduction
 
