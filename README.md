@@ -1,5 +1,7 @@
 # students.go
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summber-2022/ci.yaml?label=ci&logo=github&style=flat-square)
+
 ## Introduction
 
 ReSTful API to create, update, retrieve and delete students from a data-store (here our data-store is MongoDB).
