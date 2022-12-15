@@ -1,9 +1,9 @@
-# students.go
+# Students.go
 
 ## Introduction
 
-ReSTful API to create, update, retrieve and delete students from a datastore.
-Requests needs validation, package needs tests, there is an ORM and etc.
+ReSTful API to create, update, retrieve and delete students from a datastore (here our datasource is MongoDB).
+Requests needs validation, package needs tests, there is an ORM, etc.
 
 ## Sessions
 
