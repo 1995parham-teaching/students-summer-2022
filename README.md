@@ -17,6 +17,7 @@ Here we are doing our best to cover most of them.
 ## About the Course
 
 The course was held at Summer 2022 with [Snapp!](https://snapp.ir) and [SBU University](https://sbu.ac.ir).
+We wanted students to use their knowledge in a hands-on real world example, so they make what they learned practical.
 
 ## Sessions
 
