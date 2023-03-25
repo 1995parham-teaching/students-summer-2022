@@ -1,7 +1,11 @@
-# students.go
+<h1 align="center">Students</h1>
+<h6 align="center">Based on a Summer-2022 Backend programming with Go Course Project at Shahid Beheshti University</h6>
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summer-2022/ci.yaml?label=ci&logo=github&style=flat-square&branch=main)
-[![Codecov](https://img.shields.io/codecov/c/gh/1995parham-teaching/students-summer-2022?logo=codecov&style=flat-square)](https://codecov.io/gh/1995parham-teaching/students-summer-2022)
+<p align="center">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/1995parham-teaching/students-summer-2022/ci.yaml?logo=github&style=for-the-badge">
+  <img alt="GitHub go.mod Go version" src="https://img.shields.io/github/go-mod/go-version/1995parham-teaching/students-summer-2022?logo=go&style=for-the-badge">
+  <img alt="Codecov" src="https://img.shields.io/codecov/c/github/1995parham-teaching/students-summer-2022?logo=codecov&style=for-the-badge">
+</p>
 
 
 ## Introduction
