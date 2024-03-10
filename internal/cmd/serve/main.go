@@ -61,7 +61,7 @@ func New(logger *zap.Logger, cfg config.Config) *cobra.Command {
 	return &cobra.Command{
 		Use:   "serve",
 		Short: "runs http server for students api",
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(_ *cobra.Command, _ []string) {
 			main(logger, cfg)
 		},
 	}

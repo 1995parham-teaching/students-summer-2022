@@ -37,7 +37,7 @@ func New(logger *zap.Logger, cfg config.Config) *cobra.Command {
 	return &cobra.Command{
 		Use:   "migrate",
 		Short: "create indexes on mongodb",
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(_ *cobra.Command, _ []string) {
 			main(logger, cfg)
 		},
 	}

@@ -24,7 +24,7 @@ func (err DuplicateStudentError) Error() string {
 }
 
 type Student interface {
-	Save(context.Context, model.Student) error
-	Get(context.Context, uint64) (model.Student, error)
-	GetAll(context.Context) ([]model.Student, error)
+	Save(ctx context.Context, student model.Student) error
+	Get(ctx context.Context, id uint64) (model.Student, error)
+	GetAll(ctx context.Context) ([]model.Student, error)
 }

@@ -14,20 +14,13 @@ func New(cfg Config) (*mongo.Database, error) {
 	opts := options.Client()
 	opts.ApplyURI(cfg.URL)
 
-	// create mongodb connection
-	client, err := mongo.NewClient(opts)
-	if err != nil {
-		return nil, fmt.Errorf("db new client error: %w", err)
-	}
-
 	// connect to the mongodb
-	{
-		ctx, done := context.WithTimeout(context.Background(), cfg.ConnectionTimeout)
-		defer done()
+	ctx, done := context.WithTimeout(context.Background(), cfg.ConnectionTimeout)
+	defer done()
 
-		if err := client.Connect(ctx); err != nil {
-			return nil, fmt.Errorf("db connection error: %w", err)
-		}
+	client, err := mongo.Connect(ctx, opts)
+	if err != nil {
+		return nil, fmt.Errorf("db connection error: %w", err)
 	}
 
 	// ping the mongodb
